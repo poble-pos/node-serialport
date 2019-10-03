@@ -54,13 +54,18 @@
           ]
         }
       ],
-      ['OS!="win"',
+      ['OS!="linux"',
         {
-          'sources': [
-            'src/serialport_unix.cpp',
-            'src/poller.cpp'
-          ]
-        }
+					'sources': [
+						'src/serialport_win.cpp'
+					],
+					'msvs_settings': {
+						'VCCLCompilerTool': {
+							'ExceptionHandling': '2',
+							'DisableSpecificWarnings': [ '4530', '4506' ],
+						}
+					}
+				}
       ]
     ]
   }],
